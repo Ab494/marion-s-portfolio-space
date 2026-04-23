@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
+import profileImg from "@/assets/marion-profile.jpeg";
 
 const AboutSection = () => {
   return (
@@ -48,7 +49,7 @@ const AboutSection = () => {
               <div className="relative w-56 h-72 rounded-lg overflow-hidden glow-border group">
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10 pointer-events-none" />
                 <img
-                  src="https://placehold.co/300x350/1a2332/64ffda?text=Marion"
+                  src={profileImg}
                   alt="Marion Kipruto"
                   className="w-full h-full object-cover"
                 />
