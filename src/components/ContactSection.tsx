@@ -1,15 +1,46 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import { Send, Linkedin, Mail, Github } from "lucide-react";
+
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (status === "success" || status === "error") {
+      const t = setTimeout(() => setStatus("idle"), 3000);
+      return () => clearTimeout(t);
+    }
+  }, [status]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Thanks for reaching out! (This is a placeholder — form backend not yet connected.)");
-    setForm({ name: "", email: "", message: "" });
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        { publicKey: EMAILJS_PUBLIC_KEY }
+      );
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+    }
   };
+
+  const buttonLabel =
+    status === "sending" ? "Sending..." : status === "success" ? "Sent!" : "Send Message";
 
   return (
     <section id="contact" className="py-24 bg-navy-deep">
@@ -28,7 +59,7 @@ const ContactSection = () => {
             or just want to say hi, feel free to reach out!
           </p>
 
-          <form onSubmit={handleSubmit} className="text-left space-y-4 mb-8">
+          <form onSubmit={handleSubmit} className="text-left space-y-4 mb-4">
             <input
               type="text"
               placeholder="Your Name"
@@ -55,14 +86,25 @@ const ContactSection = () => {
             />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-primary-foreground font-mono text-sm font-medium hover:bg-primary/90 transition-colors w-full justify-center"
+              disabled={status === "sending"}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded bg-primary text-primary-foreground font-mono text-sm font-medium hover:bg-primary/90 disabled:opacity-70 disabled:cursor-not-allowed transition-colors w-full justify-center"
             >
               <Send size={16} />
-              Send Message
+              {buttonLabel}
             </button>
+            {status === "success" && (
+              <p className="text-sm text-primary text-center font-mono">
+                Message sent! I'll get back to you soon.
+              </p>
+            )}
+            {status === "error" && (
+              <p className="text-sm text-destructive text-center font-mono">
+                Something went wrong. Please try again.
+              </p>
+            )}
           </form>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm mt-8">
             <a
               href="mailto:marionkipruto@email.com"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"

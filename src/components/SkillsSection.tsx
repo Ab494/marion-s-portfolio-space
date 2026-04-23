@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { Code2, Server, Database, Brain, Shield, MessageSquare } from "lucide-react";
 
 type Skill = { name: string; level?: number; learning?: boolean };
@@ -58,8 +59,26 @@ const categories: { title: string; icon: JSX.Element; skills: Skill[]; learning?
 ];
 
 const SkillsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [animateBars, setAnimateBars] = useState(false);
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+    const obs = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setAnimateBars(true);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+    obs.observe(sectionRef.current);
+    return () => obs.disconnect();
+  }, []);
+
   return (
-    <section id="skills" className="py-24 bg-navy-deep">
+    <section ref={sectionRef} id="skills" className="py-24 bg-navy-deep">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -111,12 +130,9 @@ const SkillsSection = () => {
                       </div>
                       {!skill.learning && (
                         <div className="h-1.5 w-full rounded-full bg-secondary overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, ease: "easeOut" }}
-                            className="h-full rounded-full bg-primary"
+                          <div
+                            className="h-full rounded-full bg-primary transition-[width] duration-1000 ease-in-out"
+                            style={{ width: animateBars ? `${skill.level}%` : "0%" }}
                           />
                         </div>
                       )}
