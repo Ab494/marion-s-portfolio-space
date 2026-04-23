@@ -3,10 +3,26 @@ import FadeIn from "./FadeIn";
 
 const projects = [
   {
-    title: "Agrilink",
-    description: "A web application connecting farmers with buyers, providing real-time market prices and agricultural resources.",
-    tech: ["React", "Node.js", "MongoDB"],
-  }
+    title: "Meridian Consulting Group",
+    description: "A professional consulting firm website showcasing services, expertise, and client solutions with a clean, corporate design.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    live: "https://meridianconsultinggroup.de",
+    github: "#",
+  },
+  {
+    title: "Kazify",
+    description: "A modern web platform built with Next.js, deployed on Vercel — featuring responsive design and seamless user experience.",
+    tech: ["Next.js", "React", "Vercel"],
+    live: "https://kazify12.vercel.app",
+    github: "#",
+  },
+  {
+    title: "Survivor Support",
+    description: "A supportive web application designed to provide resources and assistance to survivors, with a focus on accessibility and care.",
+    tech: ["Node.js", "Express", "MongoDB"],
+    live: "https://survivor-support-1.onrender.com/",
+    github: "#",
+  },
 ];
 
 const ProjectsSection = () => {
