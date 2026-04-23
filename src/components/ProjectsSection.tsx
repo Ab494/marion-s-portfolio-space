@@ -23,6 +23,13 @@ const projects = [
     live: "https://survivor-support-1.onrender.com/",
     github: "#",
   },
+  {
+    title: "Zen Zone",
+    description: "A calming meditation and mindfulness web app offering breathing exercises, ambient sounds, and quick mental resets for busy minds.",
+    tech: ["React", "TypeScript", "Tailwind CSS"],
+    live: "https://zen-zone-scape.vercel.app/",
+    github: "#",
+  },
 ];
 
 const ProjectsSection = () => {
