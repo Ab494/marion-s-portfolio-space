@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download, MapPin } from "lucide-react";
 import Typewriter from "./Typewriter";
+import HeroParticles from "./HeroParticles";
 
 const techStack = [
   { name: "React", icon: "⚛️" },
@@ -26,7 +27,8 @@ const handleDownloadCV = () => {
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
-      <div className="absolute inset-0 overflow-hidden">
+      <HeroParticles />
+      <div className="absolute inset-0 overflow-hidden z-0">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
