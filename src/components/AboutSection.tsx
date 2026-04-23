@@ -45,11 +45,13 @@ const AboutSection = () => {
             </div>
 
             <div className="flex justify-center">
-              <div className="relative w-56 h-56 rounded-lg overflow-hidden glow-border group">
-                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
-                <div className="w-full h-full bg-secondary flex items-center justify-center text-muted-foreground text-sm font-mono">
-                  Photo
-                </div>
+              <div className="relative w-56 h-72 rounded-lg overflow-hidden glow-border group">
+                <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10 pointer-events-none" />
+                <img
+                  src="https://placehold.co/300x350/1a2332/64ffda?text=Marion"
+                  alt="Marion Kipruto"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>

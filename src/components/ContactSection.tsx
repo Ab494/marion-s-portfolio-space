@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Linkedin } from "lucide-react";
+import { Send, Linkedin, Mail, Github } from "lucide-react";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder submit
     alert("Thanks for reaching out! (This is a placeholder — form backend not yet connected.)");
     setForm({ name: "", email: "", message: "" });
   };
@@ -63,15 +62,33 @@ const ContactSection = () => {
             </button>
           </form>
 
-          <a
-            href="https://linkedin.com/in/marion-kipruto-a58a602a4"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors text-sm"
-          >
-            <Linkedin size={18} />
-            Connect on LinkedIn
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm">
+            <a
+              href="mailto:marionkipruto@email.com"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Mail size={16} />
+              marionkipruto@email.com
+            </a>
+            <a
+              href="https://github.com/marion"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github size={16} />
+              github.com/marion
+            </a>
+            <a
+              href="https://linkedin.com/in/marion-kipruto-a58a602a4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Linkedin size={16} />
+              linkedin.com/in/marion
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
