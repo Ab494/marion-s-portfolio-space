@@ -73,6 +73,29 @@
     background: hsl(var(--primary) / 0.3);
     color: hsl(var(--foreground));
   }
+
+  /* Page loader fade orchestration */
+  body.page-loading #root {
+    opacity: 0;
+  }
+  body.page-loaded #root {
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+  }
+  #root {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 @layer utilities {
