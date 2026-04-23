@@ -20,15 +20,15 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-4 text-slate-text leading-relaxed">
               <p>
-                Hello! I'm Marion, a passionate Full Stack Developer and Data Scientist based in Nairobi, Kenya.
-                I enjoy creating things that live on the internet — whether that's websites, applications,
-                data-driven insights, or anything in between.
+                Hello! I'm Marion, a passionate Full Stack Developer based in Nairobi, Kenya.
+                I enjoy creating things that live on the internet whether that's websites, applications,
+                data driven insights, or anything in between.
               </p>
               <p>
                 I graduated from <span className="text-foreground">The Technical University of Kenya</span> (2020–2023),
-                where I built a strong foundation in statistics, software development, and data science.
+                where I built a strong foundation in statistics.
                 My passion lies in combining web development with AI/ML to build intelligent,
-                user-centric applications.
+                user centric applications.
               </p>
               <p>
                 I specialize in the <span className="text-primary">MERN Stack</span> (MongoDB, Express, React, Node.js)
@@ -38,7 +38,7 @@ const AboutSection = () => {
               <div className="flex items-center gap-3 mt-6 p-4 rounded-lg glow-border card-gradient">
                 <Shield className="text-primary shrink-0" size={20} />
                 <p className="text-sm text-foreground">
-                  🔐 Currently expanding into <span className="text-primary font-medium">Cybersecurity</span> —
+                  Currently expanding into <span className="text-primary font-medium">Cybersecurity</span> 
                   because building great software means securing it too!
                 </p>
               </div>
