@@ -1,37 +1,59 @@
 import { motion } from "framer-motion";
 import { Code2, Server, Database, Brain, Shield, MessageSquare } from "lucide-react";
 
-const categories = [
+type Skill = { name: string; level?: number; learning?: boolean };
+
+const categories: { title: string; icon: JSX.Element; skills: Skill[]; learning?: boolean }[] = [
   {
     title: "Frontend",
     icon: <Code2 size={20} />,
-    skills: ["React.js", "HTML5", "CSS3", "JavaScript"],
+    skills: [
+      { name: "React.js", level: 85 },
+      { name: "HTML5", level: 90 },
+      { name: "CSS3", level: 88 },
+      { name: "JavaScript", level: 85 },
+    ],
   },
   {
     title: "Backend",
     icon: <Server size={20} />,
-    skills: ["Node.js", "Express.js"],
+    skills: [
+      { name: "Node.js", level: 80 },
+      { name: "Express.js", level: 78 },
+    ],
   },
   {
     title: "Databases",
     icon: <Database size={20} />,
-    skills: ["MongoDB", "MySQL"],
+    skills: [
+      { name: "MongoDB", level: 75 },
+      { name: "MySQL", level: 70 },
+    ],
   },
   {
     title: "AI/ML & Data",
     icon: <Brain size={20} />,
-    skills: ["Python", "Machine Learning", "Data Science", "Statistics"],
+    skills: [
+      { name: "Python", level: 82 },
+      { name: "Machine Learning", level: 70 },
+      { name: "Data Science", level: 72 },
+      { name: "Statistics", level: 75 },
+    ],
   },
   {
     title: "Currently Learning",
     icon: <Shield size={20} />,
-    skills: ["Cybersecurity"],
+    skills: [{ name: "Cybersecurity", learning: true }],
     learning: true,
   },
   {
     title: "Soft Skills",
     icon: <MessageSquare size={20} />,
-    skills: ["Communication", "Creative Problem Solving", "Time Management"],
+    skills: [
+      { name: "Communication", level: 90 },
+      { name: "Creative Problem Solving", level: 85 },
+      { name: "Time Management", level: 80 },
+    ],
   },
 ];
 
@@ -70,14 +92,35 @@ const SkillsSection = () => {
                     </span>
                   )}
                 </div>
-                <div className="flex flex-wrap gap-2">
+                <div className="space-y-3">
                   {cat.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="px-3 py-1 text-xs rounded-full bg-secondary text-secondary-foreground font-mono"
-                    >
-                      {skill}
-                    </span>
+                    <div key={skill.name}>
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="text-xs font-mono text-secondary-foreground">
+                          {skill.name}
+                        </span>
+                        {skill.learning ? (
+                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/15 text-primary font-mono border border-primary/30">
+                            Learning
+                          </span>
+                        ) : (
+                          <span className="text-[10px] font-mono text-muted-foreground">
+                            {skill.level}%
+                          </span>
+                        )}
+                      </div>
+                      {!skill.learning && (
+                        <div className="h-1.5 w-full rounded-full bg-secondary overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="h-full rounded-full bg-primary"
+                          />
+                        </div>
+                      )}
+                    </div>
                   ))}
                 </div>
               </motion.div>
