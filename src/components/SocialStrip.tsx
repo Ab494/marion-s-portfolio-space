@@ -1,9 +1,9 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const socials = [
-  { icon: Github, href: "https://github.com/marion", label: "GitHub" },
+  { icon: Github, href: "https://github.com/coder4-c", label: "GitHub" },
   { icon: Linkedin, href: "https://linkedin.com/in/marion-kipruto-a58a602a4", label: "LinkedIn" },
-  { icon: Mail, href: "mailto:marionkipruto@email.com", label: "Email" },
+  { icon: Mail, href: "mailto:marionkipruto21@email.com", label: "Email" },
 ];
 
 const SocialStrip = () => (
