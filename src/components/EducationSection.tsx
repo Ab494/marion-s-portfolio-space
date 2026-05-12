@@ -1,7 +1,18 @@
 import { motion } from "framer-motion";
-import { GraduationCap, Shield } from "lucide-react";
+import { GraduationCap, Shield, ExternalLink } from "lucide-react";
 
 const items = [
+  {
+    icon: Shield,
+    title: "Full-Stack Development — MERN Stack Specialization",
+    period: "2025",
+    badge: "2025 · Certified",
+    description:
+      "16-week intensive software development program covering Python, Web Technologies, Database Management, Software Engineering Essentials, and Startup Building — with a specialization in Full-Stack MERN Stack development.",
+    certificateUrl: "/MARION FULL STACK PLP.pdf",
+    institution: "Power Learn Project (PLP) · in partnership with EMURGO Africa",
+    duration: "16 weeks",
+  },
   {
     icon: GraduationCap,
     title: "The Technical University of Kenya",
@@ -49,10 +60,31 @@ const EducationSection = () => {
                   <div className="p-3 rounded-lg bg-primary/10 text-primary shrink-0">
                     <Icon size={24} />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-lg font-semibold text-foreground mb-1">{item.title}</h3>
-                    <p className="text-primary font-mono text-sm mb-2">{item.period}</p>
-                    <p className="text-slate-text text-sm leading-relaxed">{item.description}</p>
+                    {item.institution && (
+                      <p className="text-muted-foreground text-sm mb-1">{item.institution}</p>
+                    )}
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="text-primary font-mono text-sm">{item.period}</p>
+                      {item.badge && (
+                        <span className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full text-xs font-mono border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
+                          {item.badge}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-slate-text text-sm leading-relaxed mb-3">{item.description}</p>
+                    {item.certificateUrl && (
+                      <a
+                        href={item.certificateUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded border border-primary text-primary font-mono text-sm hover:bg-primary/10 transition-colors duration-200"
+                      >
+                        <ExternalLink size={14} />
+                        View Certificate
+                      </a>
+                    )}
                   </div>
                 </motion.div>
               );
