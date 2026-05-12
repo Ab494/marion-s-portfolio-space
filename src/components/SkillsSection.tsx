@@ -1,84 +1,64 @@
 import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
-import { Code2, Server, Database, Brain, Shield, MessageSquare } from "lucide-react";
+import { Code2, Server, Database, Brain, Shield } from "lucide-react";
 
-type Skill = { name: string; level?: number; learning?: boolean };
+type Tier = "Expert" | "Proficient" | "Familiar";
+type Skill = { name: string; tier?: Tier; learning?: boolean; note?: string };
+
+const tierStyles: Record<Tier, string> = {
+  Expert: "bg-primary/20 text-primary border-primary/40",
+  Proficient: "bg-primary/10 text-primary border-primary/25",
+  Familiar: "bg-secondary text-secondary-foreground border-border",
+};
 
 const categories: { title: string; icon: JSX.Element; skills: Skill[]; learning?: boolean }[] = [
   {
     title: "Frontend",
     icon: <Code2 size={20} />,
     skills: [
-      { name: "React.js", level: 85 },
-      { name: "HTML5", level: 90 },
-      { name: "CSS3", level: 88 },
-      { name: "JavaScript", level: 85 },
+      { name: "React.js", tier: "Expert" },
+      { name: "HTML5", tier: "Expert" },
+      { name: "CSS3 / Tailwind", tier: "Expert" },
+      { name: "JavaScript / TypeScript", tier: "Proficient" },
     ],
   },
   {
     title: "Backend",
     icon: <Server size={20} />,
     skills: [
-      { name: "Node.js", level: 80 },
-      { name: "Express.js", level: 78 },
+      { name: "Node.js", tier: "Proficient" },
+      { name: "Express.js", tier: "Proficient" },
+      { name: "REST APIs", tier: "Proficient" },
     ],
   },
   {
     title: "Databases",
     icon: <Database size={20} />,
     skills: [
-      { name: "MongoDB", level: 75 },
-      { name: "MySQL", level: 70 },
+      { name: "MongoDB", tier: "Proficient" },
+      { name: "MySQL", tier: "Familiar" },
     ],
   },
   {
     title: "AI/ML & Data",
     icon: <Brain size={20} />,
     skills: [
-      { name: "Python", level: 82 },
-      { name: "Machine Learning", level: 70 },
-      { name: "Data Science", level: 72 },
-      { name: "Statistics", level: 75 },
+      { name: "Python", tier: "Proficient" },
+      { name: "Machine Learning", tier: "Familiar" },
+      { name: "Data Science", tier: "Proficient" },
+      { name: "Statistics", tier: "Proficient" },
     ],
   },
   {
-    title: "Currently Learning",
+    title: "In Progress",
     icon: <Shield size={20} />,
-    skills: [{ name: "Cybersecurity", learning: true }],
+    skills: [{ name: "Cybersecurity", learning: true, note: "via CompTIA / TCM Security" }],
     learning: true,
-  },
-  {
-    title: "Soft Skills",
-    icon: <MessageSquare size={20} />,
-    skills: [
-      { name: "Communication", level: 90 },
-      { name: "Creative Problem Solving", level: 85 },
-      { name: "Time Management", level: 80 },
-    ],
   },
 ];
 
 const SkillsSection = () => {
-  const sectionRef = useRef<HTMLElement>(null);
-  const [animateBars, setAnimateBars] = useState(false);
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setAnimateBars(true);
-          obs.disconnect();
-        }
-      },
-      { threshold: 0.2 }
-    );
-    obs.observe(sectionRef.current);
-    return () => obs.disconnect();
-  }, []);
-
   return (
-    <section ref={sectionRef} id="skills" className="py-24 bg-navy-deep">
+    <section id="skills" className="py-24 bg-navy-deep">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -86,11 +66,14 @@ const SkillsSection = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-12">
+          <h2 className="flex items-center gap-3 text-2xl font-bold text-foreground mb-4">
             <span className="text-primary font-mono text-lg">02.</span>
             Skills & Technologies
             <span className="h-px flex-1 max-w-xs bg-border" />
           </h2>
+          <p className="text-xs font-mono text-muted-foreground mb-10">
+            Proficiency: <span className="text-primary">Expert</span> · <span className="text-primary">Proficient</span> · <span className="text-primary">Familiar</span>
+          </p>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {categories.map((cat, i) => (
@@ -113,28 +96,27 @@ const SkillsSection = () => {
                 </div>
                 <div className="space-y-3">
                   {cat.skills.map((skill) => (
-                    <div key={skill.name}>
-                      <div className="flex items-center justify-between mb-1.5">
-                        <span className="text-xs font-mono text-secondary-foreground">
+                    <div key={skill.name} className="flex items-center justify-between gap-3">
+                      <div className="min-w-0">
+                        <div className="text-sm font-mono text-secondary-foreground truncate">
                           {skill.name}
-                        </span>
-                        {skill.learning ? (
-                          <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/15 text-primary font-mono border border-primary/30">
-                            Learning
-                          </span>
-                        ) : (
-                          <span className="text-[10px] font-mono text-muted-foreground">
-                            {skill.level}%
-                          </span>
+                        </div>
+                        {skill.note && (
+                          <div className="text-[11px] text-muted-foreground font-mono mt-0.5">
+                            {skill.note}
+                          </div>
                         )}
                       </div>
-                      {!skill.learning && (
-                        <div className="h-1.5 w-full rounded-full bg-secondary overflow-hidden">
-                          <div
-                            className="h-full rounded-full bg-primary transition-[width] duration-1000 ease-in-out"
-                            style={{ width: animateBars ? `${skill.level}%` : "0%" }}
-                          />
-                        </div>
+                      {skill.learning ? (
+                        <span className="px-2 py-0.5 text-[10px] rounded-full bg-primary/15 text-primary font-mono border border-primary/30 shrink-0">
+                          Learning
+                        </span>
+                      ) : (
+                        <span
+                          className={`px-2 py-0.5 text-[10px] rounded-full font-mono border shrink-0 ${tierStyles[skill.tier!]}`}
+                        >
+                          {skill.tier}
+                        </span>
                       )}
                     </div>
                   ))}

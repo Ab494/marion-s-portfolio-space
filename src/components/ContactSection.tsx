@@ -54,10 +54,23 @@ const ContactSection = () => {
         >
           <p className="text-primary font-mono text-sm mb-2">06. What's Next?</p>
           <h2 className="text-3xl font-bold text-foreground mb-4">Get In Touch</h2>
-          <p className="text-slate-text mb-8">
+          <p className="text-slate-text mb-4">
             I'm always open to new opportunities and collaborations. Whether you have a question
             or just want to say hi, feel free to reach out!
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
+              Available for:
+            </span>
+            {["Full-time", "Freelance", "Contract"].map((t) => (
+              <span
+                key={t}
+                className="px-2.5 py-0.5 text-[11px] rounded-full bg-primary/10 text-primary font-mono border border-primary/30"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
 
           <form onSubmit={handleSubmit} className="text-left space-y-4 mb-4">
             <input
@@ -105,30 +118,31 @@ const ContactSection = () => {
           </form>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm mt-8">
+            {/* TODO: Replace placeholders below with real contact details */}
             <a
-              href="mailto:marionkipruto@email.com"
+              href="mailto:[your-email@gmail.com]"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} />
-              marionkipruto@email.com
+              [your-email@gmail.com]
             </a>
             <a
-              href="https://github.com/marion"
+              href="https://github.com/[your-github]"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Github size={16} />
-              github.com/marion
+              github.com/[your-github]
             </a>
             <a
-              href="https://linkedin.com/in/marion-kipruto-a58a602a4"
+              href="https://linkedin.com/in/[your-linkedin]"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Linkedin size={16} />
-              linkedin.com/in/marion
+              linkedin.com/in/[your-linkedin]
             </a>
           </div>
         </motion.div>

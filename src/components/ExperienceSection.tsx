@@ -3,22 +3,30 @@ import { Briefcase, MapPin } from "lucide-react";
 
 const experiences = [
   {
-    title: "Commission Sales Associate",
-    company: "Pyypl",
-    location: "Nairobi County, Kenya",
-    period: "Apr 2022 – Present",
-    badge: "Present",
-    description:
-      "Driving sales initiatives and client acquisition in the fintech space. Building relationships, onboarding clients, and leveraging technology to streamline sales processes and deliver results.",
-  },
-  {
     title: "Freelance Full Stack Developer",
     company: "Self-Employed",
     location: "Remote",
     period: "Jan 2023 – Present",
     badge: "Freelance",
-    description:
-      "Built and deployed multiple client projects using MERN stack and Next.js, focusing on responsive design and performance.",
+    bullets: [
+      "Built and deployed 5+ client web apps using the MERN stack and Next.js, focusing on responsive UX and performance.",
+      "Delivered end-to-end solutions covering UI, REST APIs, MongoDB schemas, and Vercel/Render deployments.",
+      "Integrated third-party services (auth, payments, email) and optimized Lighthouse scores above 90.",
+    ],
+    stack: ["React", "Next.js", "Node.js", "Express", "MongoDB", "TypeScript", "Tailwind"],
+  },
+  {
+    title: "Commission Sales Associate",
+    company: "Pyypl",
+    location: "Nairobi County, Kenya",
+    period: "Apr 2022 – Present",
+    badge: "Present",
+    bullets: [
+      "Drove client acquisition and onboarding for a leading African fintech mobile wallet.",
+      "Leveraged digital tools and CRM workflows to streamline the sales pipeline and increase conversion.",
+      "Built lasting client relationships through consultative selling and product education.",
+    ],
+    stack: ["Fintech", "CRM", "Mobile Wallet"],
   },
   {
     title: "Statistics & Data Analysis",
@@ -26,8 +34,12 @@ const experiences = [
     location: "TU Kenya",
     period: "2020 – 2023",
     badge: "Academic",
-    description:
-      "Applied machine learning and statistical modelling to real-world datasets as part of university coursework at TU Kenya.",
+    bullets: [
+      "Applied machine learning and statistical modelling to real-world datasets as part of university coursework.",
+      "Built reproducible analyses in Python (pandas, scikit-learn) with clear visualizations and reports.",
+      "Collaborated on team projects covering hypothesis testing, regression, and classification problems.",
+    ],
+    stack: ["Python", "pandas", "scikit-learn", "Statistics"],
   },
 ];
 
@@ -74,7 +86,29 @@ const ExperienceSection = () => {
                       <MapPin size={14} />
                       {exp.location} · {exp.period}
                     </div>
-                    <p className="text-slate-text text-sm leading-relaxed">{exp.description}</p>
+                    <ul className="space-y-2 mb-4">
+                      {exp.bullets.map((b) => (
+                        <li key={b} className="flex gap-2 text-slate-text text-sm leading-relaxed">
+                          <span className="text-primary mt-1.5 shrink-0">▹</span>
+                          <span>{b}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="pt-3 border-t border-border/50">
+                      <p className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono mb-2">
+                        Key Technologies
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.stack.map((t) => (
+                          <span
+                            key={t}
+                            className="px-2 py-0.5 text-[11px] rounded-full bg-primary/10 text-primary font-mono border border-primary/20"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               ))}

@@ -39,8 +39,7 @@ const AboutSection = () => {
               <div className="flex items-center gap-3 mt-6 p-4 rounded-lg glow-border card-gradient">
                 <Shield className="text-primary shrink-0" size={20} />
                 <p className="text-sm text-foreground">
-                  Currently expanding into <span className="text-primary font-medium">Cybersecurity</span> 
-                  because building great software means securing it too!
+                  Currently expanding into <span className="text-primary font-medium">Cybersecurity</span> because building great software means securing it too!
                 </p>
               </div>
             </div>
