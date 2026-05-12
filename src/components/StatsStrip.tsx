@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { value: 4, suffix: "+", label: "Projects Shipped" },
+  { value: 4, suffix: "+", label: "Projects Deployed" },
   { value: 3, suffix: "+", label: "Years Experience" },
-  { value: 6, suffix: "+", label: "Technologies" },
-  { value: 2, suffix: "", label: "Specializations" },
+  { value: 2, suffix: "", label: "Stacks (MERN + Python)" },
+  { value: 5, suffix: "+", label: "Happy Clients" },
 ];
 
 const useCountUp = (target: number, start: boolean, duration = 1500) => {
