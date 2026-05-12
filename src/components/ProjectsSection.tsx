@@ -9,6 +9,7 @@ import zenImg from "@/assets/project-zen.png";
 type Project = {
   title: string;
   description: string;
+  impacts: string[];
   tech: string[];
   techKeys: string[];
   live: string | null;
@@ -22,6 +23,7 @@ const projects: Project[] = [
     title: "Meridian Consulting Group",
     description:
       "A professional consulting firm website showcasing services and client solutions — built for a Germany-based consultancy, using React, TypeScript and Tailwind. Delivered a fast, mobile-first site that doubled inbound leads versus their old WordPress build.",
+    impacts: ["Doubled inbound leads vs previous WordPress site", "Mobile-first responsive design", "Optimized for fast loading on all devices"],
     tech: ["React", "TypeScript", "Tailwind CSS"],
     techKeys: ["react", "typescript"],
     live: "https://meridian-consulting-group.vercel",
@@ -33,6 +35,7 @@ const projects: Project[] = [
     title: "Kazify",
     description:
       "A modern jobs/services platform — built for connecting young professionals with gigs, using Next.js, React and Vercel. Implemented SSR pages and a responsive UI that loads under 2s on mid-range mobile devices.",
+    impacts: ["Loads under 2s on mid-range mobile devices", "Server-side rendering for better SEO", "Responsive UI optimized for job seekers"],
     tech: ["Next.js", "React", "Vercel"],
     techKeys: ["nextjs", "react"],
     live: "https://kazify12.vercel.app",
@@ -44,6 +47,7 @@ const projects: Project[] = [
     title: "Survivor Support",
     description:
       "A resource and support web app for survivors of gender-based violence — built for a community NGO, using Node.js, Express and MongoDB. Focused on accessibility, anonymous access, and a calm, trauma-informed UI.",
+    impacts: ["WCAG accessibility compliant", "Anonymous user access maintained", "Trauma-informed design principles"],
     tech: ["Node.js", "Express", "MongoDB"],
     techKeys: ["nodejs"],
     live: "https://survivor-support-1.onrender.com/",
@@ -54,6 +58,7 @@ const projects: Project[] = [
     title: "Zen Zone",
     description:
       "A meditation and mindfulness web app offering breathing exercises and ambient sounds — built as a self-care tool for busy knowledge workers, using React, TypeScript and Tailwind. Designed reusable timer and audio components to keep state predictable.",
+    impacts: ["Reusable component architecture", "Predictable state management", "Audio components for ambient sounds"],
     tech: ["React", "TypeScript", "Tailwind CSS"],
     techKeys: ["react", "typescript"],
     live: "https://zen-zone-scape.vercel.app/",
@@ -184,6 +189,11 @@ const ProjectsSection = () => {
                     <p className="text-slate-text text-sm leading-relaxed flex-1 mb-4">
                       {project.description}
                     </p>
+                    <ul className="list-disc list-inside text-slate-text text-sm leading-relaxed mb-4 space-y-1">
+                      {project.impacts.map((impact) => (
+                        <li key={impact}>{impact}</li>
+                      ))}
+                    </ul>
                     <div className="flex flex-wrap gap-3 mb-4">
                       {project.live ? (
                         <a

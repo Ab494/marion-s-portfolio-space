@@ -68,6 +68,9 @@ const HeroSection = () => {
                   Open to Work
                 </span>
               )}
+              <span className="inline-flex items-center gap-2 px-3 py-1 mb-4 rounded-full text-xs font-mono border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
+                Open to Opportunities
+              </span>
               <p className="text-primary font-mono text-sm mb-2">Hi, my name is</p>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-2">
                 Marion Kipruto.

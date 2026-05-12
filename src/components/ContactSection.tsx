@@ -117,6 +117,10 @@ const ContactSection = () => {
             )}
           </form>
 
+          <p className="text-center text-slate-text text-sm mt-4">
+            Response within 24 hours
+          </p>
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm mt-8">
             {/* TODO: Replace placeholders below with real contact details */}
             <a
