@@ -124,25 +124,25 @@ const ContactSection = () => {
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} />
-              [your-email@gmail.com]
+              [marionkipruti21@gmail.com]
             </a>
             <a
-              href="https://github.com/[your-github]"
+              href="https://github.com/coder4-c"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Github size={16} />
-              github.com/[your-github]
+              github.com/coder4-c
             </a>
             <a
-              href="https://linkedin.com/in/[your-linkedin]"
+              href="https://linkedin.com/in/https:/marion-kipruto-a58a602a4/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Linkedin size={16} />
-              linkedin.com/in/[your-linkedin]
+              linkedin.com/in/marion-kipruto-a58a602a4
             </a>
           </div>
         </motion.div>
