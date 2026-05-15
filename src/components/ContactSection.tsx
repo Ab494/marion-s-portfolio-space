@@ -117,32 +117,15 @@ const ContactSection = () => {
             )}
           </form>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm mt-8">
-            {/* placeholders */}
-            <a
-              href="mailto:[your-email@gmail.com]"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Mail size={16} />
-              [marionkipruti21@gmail.com]
+          <div className="flex justify-center gap-4 mt-4">
+            <a href="mailto:marionrutto21@gmail.com" aria-label="Email" className="text-muted-foreground hover:text-primary transition-colors">
+              <Mail size={18} />
             </a>
-            <a
-              href="https://github.com/coder4-c"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Github size={16} />
-              github.com/coder4-c
+            <a href="https://github.com/coder4-c" target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-muted-foreground hover:text-primary transition-colors">
+              <Github size={18} />
             </a>
-            <a
-              href="https://linkedin.com/in/https:/marion-kipruto-a58a602a4/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-            >
-              <Linkedin size={16} />
-              linkedin.com/in/marion-kipruto-a58a602a4
+            <a href="https://linkedin.com/in/marion-kipruto-a58a602a4" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
+              <Linkedin size={18} />
             </a>
           </div>
         </motion.div>
