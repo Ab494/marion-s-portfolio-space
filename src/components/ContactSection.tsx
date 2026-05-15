@@ -124,11 +124,11 @@ const ContactSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm mt-8">
             {/* TODO: Replace placeholders below with real contact details */}
             <a
-              href="mailto:[your-email@gmail.com]"
+              href="mailto:[marionrutto21@gmail.com]"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} />
-              [marionkipruti21@gmail.com]
+              [marionrutto21@gmail.com]
             </a>
             <a
               href="https://github.com/coder4-c"
