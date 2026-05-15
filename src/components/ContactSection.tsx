@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
 import { Send, Linkedin, Mail, Github } from "lucide-react";
 
-const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID";
-const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";
-const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY";
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xykoqrdg";
 
 const ContactSection = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -22,18 +19,17 @@ const ContactSection = () => {
     e.preventDefault();
     setStatus("sending");
     try {
-      await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
-        },
-        { publicKey: EMAILJS_PUBLIC_KEY }
-      );
-      setStatus("success");
-      setForm({ name: "", email: "", message: "" });
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.name, email: form.email, message: form.message, _replyto: form.email }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -62,7 +58,11 @@ const ContactSection = () => {
             <span className="text-[10px] uppercase tracking-wider text-muted-foreground font-mono">
               Available for:
             </span>
-            {["Full-time", "Freelance", "Contract"].map((t) => (
+            {[
+              "Full-time",
+              "Freelance",
+              "Contract",
+            ].map((t) => (
               <span
                 key={t}
                 className="px-2.5 py-0.5 text-[11px] rounded-full bg-primary/10 text-primary font-mono border border-primary/30"
@@ -117,18 +117,14 @@ const ContactSection = () => {
             )}
           </form>
 
-          <p className="text-center text-slate-text text-sm mt-4">
-            Response within 24 hours
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-sm mt-8">
-            {/* TODO: Replace placeholders below with real contact details */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-sm mt-8">
+            {/* placeholders */}
             <a
-              href="mailto:[marionrutto21@gmail.com]"
+              href="mailto:[your-email@gmail.com]"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
             >
               <Mail size={16} />
-              [marionrutto21@gmail.com]
+              [marionkipruti21@gmail.com]
             </a>
             <a
               href="https://github.com/coder4-c"
@@ -156,3 +152,4 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
