@@ -89,7 +89,7 @@ const HeroSection = () => {
               </p>
               <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm mb-8">
                 <MapPin size={16} className="text-primary" />
-                Nairobi, Kenya
+                Eldoret, Kenya
               </div>
 
               <div className="flex flex-wrap gap-4 mb-10 justify-center md:justify-start">
