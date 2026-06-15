@@ -36,12 +36,10 @@ const AboutSection = () => {
                 and love working with Python for data analysis and machine learning projects.
               </p>
 
-              <div className="flex items-center gap-3 mt-6 p-4 rounded-lg glow-border card-gradient">
-                <Shield className="text-primary shrink-0" size={20} />
-                <p className="text-sm text-foreground">
-                  Currently expanding into <span className="text-primary font-medium">Cybersecurity</span> because building great software means securing it too!
-                </p>
-              </div>
+              <p>
+                I Completed Cybersecurity training at ALX Africa in 2026 May, where I gained hands-on experience with network security, ethical hacking, and vulnerability assessment.
+                This training has equipped me with a strong understanding of cybersecurity principles and best practices, which I apply to ensure the security and integrity of the applications I develop.
+              </p>
             </div>
 
             <div className="flex justify-center">

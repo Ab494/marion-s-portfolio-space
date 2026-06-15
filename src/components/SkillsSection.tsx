@@ -25,6 +25,7 @@ const categories: { title: string; icon: JSX.Element; skills: Skill[]; learning?
     title: "Backend",
     icon: <Server size={20} />,
     skills: [
+      { name: "Django", tier: "Proficient" },
       { name: "Node.js", tier: "Proficient" },
       { name: "Express.js", tier: "Proficient" },
       { name: "REST APIs", tier: "Proficient" },

@@ -5,10 +5,13 @@ import HeroParticles from "./HeroParticles";
 import profileImg from "@/assets/marion-profile.jpeg";
 
 const techStack = [
+  { name: "Django", icon: "🌐" },
   { name: "React", icon: "⚛️" },
   { name: "Node.js", icon: "🟢" },
   { name: "Python", icon: "🐍" },
   { name: "MongoDB", icon: "🍃" },
+  { name: "PostgreSQL", icon: "🐘" },
+  { name: "MySQL", icon: "🐬" },
 ];
 
 // Toggle to show/hide the "Open to Work" badge
@@ -76,16 +79,16 @@ const HeroSection = () => {
                 Marion Kipruto.
               </h1>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-muted-foreground mb-5">
-                Full Stack Developer specializing in scalable web apps and data-driven solutions.
+                Aspiring Full Stack Developer specializing in MERN, Django, and Python.
               </h2>
               <div className="text-slate-text text-lg mb-2 leading-relaxed min-h-[1.75rem]">
                 <Typewriter
-                  words={["Full Stack Developer", "Data Scientist", "AI/ML Expert"]}
+                  words={["Full Stack Developer", "Django Developer", "Python Developer"]}
                   className="text-primary font-mono"
                 />
               </div>
               <p className="text-slate-text text-sm mb-3">
-                3+ years building production-ready apps with MERN, Next.js and Python.
+                Aspiring Full Stack Developer specializing in MERN, Django, and Python.
               </p>
               <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm mb-8">
                 <MapPin size={16} className="text-primary" />

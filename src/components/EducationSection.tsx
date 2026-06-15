@@ -24,9 +24,9 @@ const items = [
   {
     icon: Shield,
     title: "Cybersecurity Fundamentals",
-    period: "2024 – Present · Currently Learning",
+    period: "2025 – Completed May 2026",
     description:
-      "Expanding into ethical hacking, network security, and secure software development practices.",
+      "Completed comprehensive cybersecurity training at ALX Africa, gaining hands-on experience in network security, ethical hacking, and vulnerability assessment. This training has equipped me with a strong understanding of cybersecurity principles and best practices, which I apply to ensure the security and integrity of the applications I develop.",
   },
 ];
 
