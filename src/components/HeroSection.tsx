@@ -16,7 +16,7 @@ const techStack = [
 
 const HeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden" style={{ background: "var(--gradient-hero)" }}>
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-24" style={{ background: "var(--gradient-hero)" }}>
       <HeroParticles />
       <div className="absolute inset-0 overflow-hidden z-0">
         {[...Array(20)].map((_, i) => (
