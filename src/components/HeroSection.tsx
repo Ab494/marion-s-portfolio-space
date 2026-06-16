@@ -111,7 +111,7 @@ const HeroSection = () => {
                 </a>
                 {/* TODO: Replace /marion-kipruto-cv.pdf with actual hosted PDF in /public */}
                 <a
-                  href="/marion-kipruto-cv.pdf"
+                  href="/public/MARION JEPCHUMBA SWE.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   download
