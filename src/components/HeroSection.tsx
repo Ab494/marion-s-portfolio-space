@@ -61,23 +61,8 @@ const HeroSection = () => {
             </div>
 
             <div className="flex-1 min-w-0">
-              <p className="text-primary font-mono text-sm mb-3">Hi, my name is</p>
-
-              {/* Badges — grouped in one row, breathing room below greeting */}
-              {isOpenToWork && (
-                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-4">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
-                    <span className="relative flex h-2 w-2">
-                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-                    </span>
-                    Open to Work
-                  </span>
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-primary/40 bg-primary/10 text-primary">
-                    Open to Opportunities
-                  </span>
-                </div>
-              )}
+              {/* Larger greeting */}
+              <p className="text-primary font-mono text-base sm:text-lg mb-3">Hi, my name is</p>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-2">
                 Marion Kipruto.
@@ -99,7 +84,8 @@ const HeroSection = () => {
                 Eldoret, Kenya
               </div>
 
-              <div className="flex flex-wrap gap-4 mb-10 justify-center md:justify-start">
+              {/* CTA Buttons */}
+              <div className="flex flex-wrap gap-4 mb-4 justify-center md:justify-start">
                 <a
                   href="#projects"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded border border-primary text-primary font-mono text-sm hover:bg-primary/10 transition-colors duration-200"
@@ -124,6 +110,22 @@ const HeroSection = () => {
                   Download CV
                 </a>
               </div>
+
+              {/* Badges — just below CTA buttons */}
+              {isOpenToWork && (
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-8">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                    </span>
+                    Open to Work
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-primary/40 bg-primary/10 text-primary">
+                    Open to Opportunities
+                  </span>
+                </div>
+              )}
 
               {/* Tech stack row */}
               <div className="flex flex-wrap gap-6 justify-center md:justify-start">
