@@ -14,6 +14,8 @@ const techStack = [
   { name: "MySQL", icon: "🐬" },
 ];
 
+const isOpenToWork = true;
+
 const HeroSection = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center overflow-hidden pt-24" style={{ background: "var(--gradient-hero)" }}>
@@ -59,30 +61,37 @@ const HeroSection = () => {
             </div>
 
             <div className="flex-1 min-w-0">
-              <p className="text-primary font-mono text-xl sm:text-2xl mb-3">Hi, my name is</p>
+              {/* Greeting — centered within its own column */}
+              <p className="text-primary font-mono text-lg sm:text-xl mb-2 text-center md:text-left">
+                Hi, my name is
+              </p>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-2">
                 Marion Kipruto.
               </h1>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-muted-foreground mb-5">
-                Aspiring Full Stack Developer specializing in MERN, Django, and Python.
+
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-muted-foreground mb-4">
+                Full Stack Developer specializing in MERN, Django, and Python.
               </h2>
-              <div className="text-slate-text text-lg mb-2 leading-relaxed min-h-[1.75rem]">
+
+              <div className="text-slate-text text-base mb-2 leading-relaxed min-h-[1.75rem]">
                 <Typewriter
                   words={["Full Stack Developer", "Django Developer", "Python Developer"]}
                   className="text-primary font-mono"
                 />
               </div>
+
               <p className="text-slate-text text-sm mb-3">
-                Aspiring Full Stack Developer specializing in MERN, Django, and Python.
+                Full Stack Developer specializing in MERN, Django, and Python.
               </p>
+
               <div className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm mb-8">
                 <MapPin size={16} className="text-primary" />
                 Eldoret, Kenya
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex flex-wrap gap-4 mb-10 justify-center md:justify-start">
+              <div className="flex flex-wrap gap-4 mb-4 justify-center md:justify-start">
                 <a
                   href="#projects"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded border border-primary text-primary font-mono text-sm hover:bg-primary/10 transition-colors duration-200"
@@ -107,6 +116,22 @@ const HeroSection = () => {
                   Download CV
                 </a>
               </div>
+
+              {/* Badges — just below CTA buttons */}
+              {isOpenToWork && (
+                <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-8">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-emerald-400/40 bg-emerald-400/10 text-emerald-300">
+                    <span className="relative flex h-2 w-2">
+                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+                      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                    </span>
+                    Open to Work
+                  </span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono border border-primary/40 bg-primary/10 text-primary">
+                    Open to Opportunities
+                  </span>
+                </div>
+              )}
 
               {/* Tech stack row */}
               <div className="flex flex-wrap gap-6 justify-center md:justify-start">
