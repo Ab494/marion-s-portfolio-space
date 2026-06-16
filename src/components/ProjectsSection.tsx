@@ -22,11 +22,11 @@ const projects: Project[] = [
   {
     title: "Meridian Consulting Group",
     description:
-      "A professional consulting firm website showcasing services and client solutions — built for a Germany-based consultancy, using React, TypeScript and Tailwind. Delivered a fast, mobile-first site that doubled inbound leads versus their old WordPress build.",
+      "A professional consulting firm website showcasing services and client solutions, built for a Germany-based consultancy, using React, TypeScript and Tailwind. Delivered a fast, mobile-first site that doubled inbound leads versus their old WordPress build.",
     impacts: ["Doubled inbound leads vs previous WordPress site", "Mobile-first responsive design", "Optimized for fast loading on all devices"],
     tech: ["React", "TypeScript", "Tailwind CSS"],
     techKeys: ["react", "typescript"],
-    live: "https://meridian-consulting-group.vercel",
+    live: "https://www.themeridianconsultinggroup.com/",
     github: "https://github.com/coder4-c/your-website-creator.git",
     image: meridianImg,
     featured: true,
@@ -34,7 +34,7 @@ const projects: Project[] = [
   {
     title: "Kazify",
     description:
-      "A modern jobs/services platform — built for connecting young professionals with gigs, using Next.js, React and Vercel. Implemented SSR pages and a responsive UI that loads under 2s on mid-range mobile devices.",
+      "A modern jobs/services platform built for connecting young professionals with gigs, using Next.js, React and Vercel. Implemented SSR pages and a responsive UI that loads under 2s on mid-range mobile devices.",
     impacts: ["Loads under 2s on mid-range mobile devices", "Server-side rendering for better SEO", "Responsive UI optimized for job seekers"],
     tech: ["Next.js", "React", "Vercel"],
     techKeys: ["nextjs", "react"],
