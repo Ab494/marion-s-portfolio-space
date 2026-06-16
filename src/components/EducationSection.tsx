@@ -25,8 +25,11 @@ const items = [
     icon: Shield,
     title: "Cybersecurity Fundamentals",
     period: "2025 – Completed May 2026",
+    badge: "2026 · Certified",
     description:
       "Completed comprehensive cybersecurity training at ALX Africa, gaining hands-on experience in network security, ethical hacking, and vulnerability assessment. This training has equipped me with a strong understanding of cybersecurity principles and best practices, which I apply to ensure the security and integrity of the applications I develop.",
+    institution: "ALX Africa",
+    certificateUrl: "/MARION KIPRUTO PROFESSIONAL FOUNDATIONS.png",
   },
 ];
 
@@ -43,6 +46,7 @@ const EducationSection = () => {
       return () => document.removeEventListener("keydown", handleEscape);
     }
   }, [showModal]);
+
   return (
     <section id="education" className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
