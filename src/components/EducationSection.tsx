@@ -29,7 +29,7 @@ const items = [
     description:
       "Completed comprehensive cybersecurity training at ALX Africa, gaining hands-on experience in network security, ethical hacking, and vulnerability assessment. This training has equipped me with a strong understanding of cybersecurity principles and best practices, which I apply to ensure the security and integrity of the applications I develop.",
     institution: "ALX Africa",
-    certificateUrl: "C:\\Users\\user\\OneDrive\\Desktop\\marion-s-portfolio-space\\public\\MARION KIPRUTO PROFESSIONAL FOUNDATIONS.png",
+    certificateUrl: "public/marion kipruto professional foundations.png",
   },
 ];
 
