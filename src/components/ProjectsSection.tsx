@@ -26,7 +26,7 @@ const projects: Project[] = [
     impacts: ["Doubled inbound leads vs previous WordPress site", "Mobile-first responsive design", "Optimized for fast loading on all devices"],
     tech: ["React", "TypeScript", "Tailwind CSS"],
     techKeys: ["react", "typescript"],
-    live: "https://www.themeridianconsultinggroup.com/",
+    live: "https://your-website-creator-mu.vercel.app/",
     github: "https://github.com/coder4-c/your-website-creator.git",
     image: meridianImg,
     featured: true,
