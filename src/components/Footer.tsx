@@ -26,9 +26,9 @@ const Footer = () => {
           ))}
         </div>
         <p className="text-muted-foreground text-sm font-mono text-center">
-          Designed & Built by Marion Kipruto
+          Designed & Built by Martha Jerop
         </p>
-        <p className="text-muted-foreground/70 text-xs font-mono">© {year} Marion Kipruto</p>
+        <p className="text-muted-foreground/70 text-xs font-mono">© {year} Martha Jerop</p>
         <a
           href="#hero"
           className="inline-flex items-center gap-1 text-xs font-mono text-muted-foreground hover:text-primary transition-colors"

@@ -21,7 +21,7 @@ const AboutSection = () => {
           <div className="grid md:grid-cols-3 gap-12">
             <div className="md:col-span-2 space-y-4 text-slate-text leading-relaxed">
               <p>
-                Hello! I'm Marion, a passionate Full Stack Developer based in Eldoret, Kenya.
+                Hello! I'm Martha Jerop, a passionate Full Stack Developer based in Sydney, Australia.
                 I enjoy creating things that live on the internet whether that's websites, applications,
                 data driven insights, or anything in between.
               </p>
@@ -47,7 +47,7 @@ const AboutSection = () => {
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10 pointer-events-none" />
                 <img
                   src={profileImg}
-                  alt="Marion Kipruto, Full Stack Developer based in Eldoret, Kenya"
+                  alt="Martha Jerop, Full Stack Developer based in Sydney, Australia"
                   loading="lazy"
                   decoding="async"
                   width={224}
