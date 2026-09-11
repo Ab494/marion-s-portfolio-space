@@ -25,12 +25,7 @@ const AboutSection = () => {
                 I enjoy creating things that live on the internet whether that's websites, applications,
                 data driven insights, or anything in between.
               </p>
-              <p>
-                I graduated from <span className="text-foreground">The Technical University of Kenya</span> (2020–2024),
-                where I built a strong foundation in statistics.
-                My passion lies in combining web development with AI/ML to build intelligent,
-                user centric applications.
-              </p>
+              
               <p>
                 I specialize in the <span className="text-primary">MERN Stack</span> (MongoDB, Express, React, Node.js)
                 and love working with Python for data analysis and machine learning projects.
