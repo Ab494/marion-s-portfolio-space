@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, MapPin, Sparkles } from "lucide-react";
 import Typewriter from "./Typewriter";
 import HeroParticles from "./HeroParticles";
-import profileImg from "@/assets/marion-profile.jpeg";
 
 const techStack = [
   { name: "Django", icon: "🌐" },
@@ -65,13 +64,6 @@ const HeroSection = () => {
               <div className="relative">
                 <div className="absolute inset-0 rounded-full bg-primary/20 blur-xl animate-pulse-glow scale-110" />
                 <div className="relative w-36 h-36 md:w-44 md:h-44 rounded-full overflow-hidden ring-2 ring-primary/50 shadow-[0_0_40px_hsl(var(--primary)/0.2)]">
-                  <img
-                    src={profileImg}
-                    alt="Marion Kipruto headshot"
-                    loading="eager"
-                    decoding="async"
-                    className="w-full h-full object-cover"
-                  />
                 </div>
                 {/* Online indicator */}
                 <span className="absolute bottom-2 right-2 w-4 h-4 rounded-full bg-emerald-400 border-2 border-background shadow-lg">

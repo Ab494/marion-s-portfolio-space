@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
-import profileImg from "@/assets/marion-profile.jpeg";
-
 const AboutSection = () => {
   return (
     <section id="about" className="py-24 bg-background">
@@ -40,16 +38,6 @@ const AboutSection = () => {
             <div className="flex justify-center">
               <div className="relative w-56 rounded-lg overflow-hidden glow-border group" style={{ aspectRatio: "3 / 4" }}>
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10 pointer-events-none" />
-                <img
-                  src={profileImg}
-                  alt="Martha Jerop, Full Stack Developer based in Sydney, Australia"
-                  loading="lazy"
-                  decoding="async"
-                  width={224}
-                  height={299}
-                  sizes="(max-width: 768px) 14rem, 224px"
-                  className="w-full h-full object-cover"
-                />
               </div>
             </div>
           </div>
