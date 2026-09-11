@@ -100,7 +100,7 @@ const HeroSection = () => {
                 transition={{ duration: 0.5, delay: 0.5 }}
                 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-3 leading-tight"
               >
-                Marion Kipruto.
+                Martha Jerop.
               </motion.h1>
 
               {/* Role */}
