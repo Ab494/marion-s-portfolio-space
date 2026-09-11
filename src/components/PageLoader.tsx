@@ -30,7 +30,7 @@ const PageLoader = () => {
         opacity: fading ? 0 : 1,
       }}
     >
-      <span className="font-mono text-primary text-[32px]">&lt;Marion /&gt;</span>
+      <span className="font-mono text-primary text-[32px]">Marion</span>
     </div>
   );
 };

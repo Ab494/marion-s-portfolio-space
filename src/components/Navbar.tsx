@@ -32,7 +32,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between py-4 px-4 lg:px-8">
         <a href="#" className="text-primary font-mono text-lg font-semibold tracking-tight">
-          &lt;Marion /&gt;
+          Marion
         </a>
 
         {/* Desktop */}
