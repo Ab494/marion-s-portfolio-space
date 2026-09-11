@@ -135,7 +135,7 @@ const HeroSection = () => {
                 className="flex items-center justify-center md:justify-start gap-2 text-muted-foreground text-sm mb-7"
               >
                 <MapPin size={14} className="text-primary" />
-                Eldoret, Kenya
+                Sydney, Australia
               </motion.div>
 
               {/* CTA Buttons */}
