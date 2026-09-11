@@ -14,13 +14,7 @@ const items = [
     institution: "Power Learn Project (PLP) · in partnership with EMURGO Africa",
     duration: "16 weeks",
   },
-  {
-    icon: GraduationCap,
-    title: "The Technical University of Kenya",
-    period: "2020 – 2023",
-    description:
-      "Studied statistics and data science, building a strong foundation in analytical thinking, software development, and applied mathematics.",
-  },
+  
   {
     icon: Shield,
     title: "Cybersecurity Fundamentals",
