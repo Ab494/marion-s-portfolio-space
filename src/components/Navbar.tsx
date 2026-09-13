@@ -5,13 +5,15 @@ import ThemeToggle from "./ThemeToggle";
 import { useActiveSection } from "@/hooks/useActiveSection";
 
 const navLinks = [
-  { label: "About", href: "#about", id: "about" },
-  { label: "Skills", href: "#skills", id: "skills" },
-  { label: "Experience", href: "#experience", id: "experience" },
-  { label: "Projects", href: "#projects", id: "projects" },
-  { label: "Education", href: "#education", id: "education" },
-  { label: "Contact", href: "#contact", id: "contact" },
+  { label: "About", href: "/#about", id: "about" },
+  { label: "Skills", href: "/#skills", id: "skills" },
+  { label: "Experience", href: "/#experience", id: "experience" },
+  { label: "Projects", href: "/#projects", id: "projects" },
+  { label: "Education", href: "/#education", id: "education" },
+  { label: "Contact", href: "/#contact", id: "contact" },
 ];
+
+const ctaLink = { label: "Hire Me", href: "/hire" };
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -56,6 +58,14 @@ const Navbar = () => {
               </li>
             );
           })}
+          <li>
+            <a
+              href={ctaLink.href}
+              className="px-4 py-2 rounded border border-primary text-primary font-mono text-sm hover:bg-primary/10 transition-colors"
+            >
+              {ctaLink.label}
+            </a>
+          </li>
         </ul>
 
         <ThemeToggle />
@@ -97,6 +107,15 @@ const Navbar = () => {
                   </li>
                 );
               })}
+              <li>
+                <a
+                  href={ctaLink.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="px-5 py-2.5 rounded bg-primary text-primary-foreground font-mono text-sm hover:bg-primary/90 transition-colors"
+                >
+                  {ctaLink.label}
+                </a>
+              </li>
               <li>
                 <ThemeToggle />
               </li>
